@@ -1,0 +1,17 @@
+.FamilySection{
+    text-align: center;
+    padding: 3.5rem;
+    margin-top: 6.4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FamilySection img{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #b36d3c;
+    padding: 0.24rem;
+    border-radius: 0.51rem;
+}

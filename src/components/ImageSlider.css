@@ -1,0 +1,9 @@
+.image_wrapper{
+    width: 500px;
+    margin: 0px 30px;
+}
+
+.image_wrapper img{
+    width: 87%;
+    height: 80%;
+}
