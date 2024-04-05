@@ -15,11 +15,11 @@ const Footer = () => {
           </p>
         </nav>
         <nav>
-          <h6 className="footer-title text-xl font-semibold">Services</h6>
-          <a className="link link-hover">Social Events</a>
-          <a className="link link-hover">Professional Events</a>
-          <a className="link link-hover">Culturals and Enivorments Events</a>
-          <a className="link link-hover">Sport Events</a>
+          <h6 className="footer-title text-xl font-semibold" >Services</h6>
+          <a className="link link-hover" href="/services#social">Social Events</a>
+          <a className="link link-hover"  href="/services#professional">Professional Events</a>
+          <a className="link link-hover"  href="/services#cultural">Culturals and Enivorments Events</a>
+          <a className="link link-hover"  href="/services#sports">Sport Events</a>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4 ">
