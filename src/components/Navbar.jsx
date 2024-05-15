@@ -6,6 +6,23 @@ const Navbar = () => {
     localStorage.getItem("theme") ? localStorage.getItem('theme') : "retro"
   )
 
+  const [scrolling, setScrolling] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 1000) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleToggle = (e) => {
     if(e.target.checked) setTheme("cupcake")
     else setTheme("retro")
@@ -23,9 +40,11 @@ const Navbar = () => {
       <div
         className="navbar text-3xl"
         style={{
-          backgroundColor: "transparent",
+          backgroundColor: scrolling ? "#f2f0e4" : "transparent",
           position: "fixed",
           zIndex: 100,
+          padding: '0px'
+          
         }}
       >
         <div className="navbar-start">
@@ -69,15 +88,17 @@ const Navbar = () => {
             <img src="/brand.png" alt="icon" height={"100%"} width={"200px"} />
           </Link>
         </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
+        <div className="navbar-end hidden lg:flex text-center">
+          <ul className="menu menu-horizontal px-1" style={{
+            color: scrolling ?  "brown" : 'white'
+          }}>
+            <li className="mt-3">
               <Link to="/services">Services</Link>
             </li>
-            <li>
+            <li className="mt-3">
               <a href="/#About">About</a>
             </li>
-            <li>
+            <li className="mt-3">
               <a href="/pricing_contact">pricing & Contact</a>
             </li>
             <li title="Change theme">
